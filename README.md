@@ -19,12 +19,14 @@ Rounds	Choices	Sessions	Reversals
 The value-learning process is modelled through the Q-learning algorithm, where there are no states, but only actions. The expected value of an upcoming action Q¬〖¬(a)〗_(t+1) is updated by the prediction error, [r_t-Q_t (a)], that is scaled by a general learning rate α. A lower α implies a gradual, slow update of the action’s Q-value, whereas a higher one implies a heavy dependence on the prediction error. In order to capture and quantify loss aversion, not only does an agent update an action’s Q-value when it receives a reward, but it updates it when it receives a negative or no reward as well. For this, the α is divided between an α_rew for a reward and an α_norew for no reward to have an appropriate measurement for feedback-dependent learning. Accordingly, this model’s Q-values are presented in Equations 2 and 3.
 
 Q_(t+1) (a)=Q_t (a)+α_rew [r_t-Q_t (a)]   at r_t=1	Eq. 2
+
 Q_(t+1) (a)=Q_t (a)+α_norew [r_t-Q_t (a)]   at r_t=0	Eq. 3
 
 
 Finally, to compute probabilities of action selection at each trial, the model relies on the softmax function and the inverse temperature parameter β. A high β represents an agent tending more towards exploring its choice set, and a low one is an agent that is exploiting known information. The softmax function is presented in Equation 4.
 
 Pr(a)=e^β[Q_t (a)] /e^(β[Q_t (a)+Q_t (a_un )]) 	Eq. 4
+
 Where Q(a_un ) is the Q-value of the unchosen action
 
 
