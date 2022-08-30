@@ -33,3 +33,11 @@ Where Q(a_un ) is the Q-value of the unchosen action
 The measurement of a reward in this study is a calculated Average Reversal Reward (ARR) for each agent which is calculated at every reversal phase in the session.  Precisely, an agent playing in a session of 20 rounds can have an ARR between 0 and 10, an ARR between 0 and 40 in a 20-round session, and so forth.
 
 Each free parameter has a specific range in the design. Both the α_rew and the α_norew lie within the traditional range of 0 and 1. As for the inverse temperature parameter β, it lies between 0 and 1000 to examine a wide range of possible behavioural patterns in the exploration/exploitation trade-off. Therefore, the set of simulations included all possible combinations of  α_rew,α_norew and β, making it an 11x11x20 combination of 2420 agents.
+
+
+FILES:
+  1. Simulations_LowHigh: the code for simulating the agents based on their low/high parameter sets.
+  2. Subplots_simulations: plotting the low/high parameter sets simulations.
+  3. Simulations2420: the code for simulating all 2420 agents.
+  4. Subplots_LearningTypes: plotting the 3 main behavioural patterns (non-learners, ARR-minimisers, and ARR-maximisers).
+  5. Diff_Max_Min: the code for calculating the overall maximum, each behavioural pattern's maximum and minimum, and the difference between them for both zero and negative losses.
